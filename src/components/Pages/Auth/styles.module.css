@@ -111,7 +111,7 @@ div {
   margin-left: auto;
   margin-right: auto;
   margin-bottom: 4%;
-  border: 2px solid #37B34A;
+  border: 1px solid rgba(127, 129, 126);
   border-radius: 10px;
 
 }
@@ -154,7 +154,7 @@ div {
   background-color: #37B34A;
   border: 1px solid #37B34A;
   border-radius: 10px;
-  color: lightcyan;
+  color: white;
   font-size: calc(0.5em + 0.8vw);
   font-weight: bold;
 }

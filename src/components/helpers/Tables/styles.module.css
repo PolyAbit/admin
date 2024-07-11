@@ -1,0 +1,77 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+.body {
+  margin-left: auto;
+  margin-right: auto;
+  display: flex;
+  flex-direction: column;
+}
+
+.containerOfCreateBtn {
+  margin-top: auto;
+  margin-bottom: auto;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  height: 44px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.containerOfTbl {
+  margin-top: auto;
+  margin-bottom: auto;
+}
+
+.createBtn {
+  width: 190px;
+  height: 36px;
+  padding: 5px;
+  color: #212529;
+  font-weight: 600;
+  font-size: 1rem;
+}
+
+.createBtn:hover {
+  background-color: #37B34A;
+  color: #f8f9fa;
+  cursor: pointer;
+  border: 1px solid lightcyan;
+  width: 210px;
+  height: 44px;
+}
+
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 1;
+
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+th,
+td {
+  white-space: nowrap;
+  padding: 0.5rem;
+
+}
+
+th {
+  background: rgba(0, 0, 0, 0.1);
+}
+
+td {
+  text-align: left;
+}
+
+tbody tr:nth-child(2n) {
+  background: rgba(0, 0, 0, 0.05);
+}

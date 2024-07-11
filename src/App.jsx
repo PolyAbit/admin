@@ -1,9 +1,11 @@
 import Auth from './components/Pages/Auth/authpage'
+import Main from './components/Pages/Main/mainpage'
 
 function App() {
 	return (
 		<>
-			<Auth />
+			{/* <Auth /> */}
+			<Main />
 		</>
 	)
 }
