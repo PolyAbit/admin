@@ -1,4 +1,4 @@
-import Table from '../../helpers/Tables/tabledirections'
+import Table from '../../Tables/tabledirections'
 import styles from './styles.module.css'
 
 const Main = () => {

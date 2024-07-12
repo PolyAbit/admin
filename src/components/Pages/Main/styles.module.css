@@ -69,8 +69,6 @@ div {
 
 .href:hover {
   border-bottom: 2px solid #37B34A;
-  margin-bottom: .15rem;
-  margin-top: 0.85rem;
 }
 
 .logout {
