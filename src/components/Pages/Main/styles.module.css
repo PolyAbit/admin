@@ -72,6 +72,7 @@ div {
 }
 
 .logout {
+  border: none;
   float: left;
   border-radius: .25rem;
   text-transform: none;
@@ -79,6 +80,7 @@ div {
   line-height: 1.48;
   margin: 0 .625rem 0 1rem;
   background: #37B34A;
+  font-size: 1rem;
   font-weight: 600;
   letter-spacing: .025em;
   color: #f8f9fa;
@@ -89,6 +91,7 @@ div {
 .logout:hover {
   background-color: lightcyan;
   color: #37B34A;
+  cursor: pointer;
 }
 
 

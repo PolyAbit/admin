@@ -2,6 +2,10 @@ import Table from '../../Tables/tabledirections'
 import styles from './styles.module.css'
 
 const Main = () => {
+	const handleClick = () => {
+		window.location.href = '/'
+	}
+
 	return (
 		<main className={styles.body}>
 			<header className={styles.header}>
@@ -18,9 +22,9 @@ const Main = () => {
 					<a href='' className={styles.hrefDisabled}>
 						Управление
 					</a>
-					<a href='' className={styles.logout}>
+					<button onClick={handleClick} className={styles.logout}>
 						Выйти
-					</a>
+					</button>
 				</div>
 			</header>
 			<Table />

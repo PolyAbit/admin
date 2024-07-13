@@ -1,17 +1,17 @@
 import Auth from './components/Pages/Auth/authpage'
 import Main from './components/Pages/Main/mainpage'
-import { BrowserRouter, Routes, Route, useNavigate } from 'react-router-dom'
+import { Routes, Route, useNavigate } from 'react-router-dom'
+import PrivateRoute from './router/privateRoute'
 
 function App() {
 	return (
 		<>
-			<Auth />
-			{/* <BrowserRouter>
-				<Routes>
-					<Route path='/' element={<Main />} />
-					<Route path='Auth' element={<Auth />} />
-				</Routes>
-			</BrowserRouter> */}
+			<Routes>
+				<Route element={<PrivateRoute />}>
+					<Route path='main' element={<Main />} />
+				</Route>
+				<Route path='/' element={<Auth />} />
+			</Routes>
 		</>
 	)
 }
