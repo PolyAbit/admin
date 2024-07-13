@@ -59,7 +59,7 @@ const Auth = () => {
 			)
 
 			const { token } = await response.json()
-			if ({ token }) {
+			if (token) {
 				localStorage.setItem('Token', { token })
 				window.location.href = 'main'
 			} else {
