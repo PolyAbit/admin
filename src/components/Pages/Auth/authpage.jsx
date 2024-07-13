@@ -53,26 +53,18 @@ const Auth = () => {
 			const response = await fetch(
 				'https://alpaca-oriented-certainly.ngrok-free.app/login',
 				{
-					//mode: 'no-cors',
 					method: 'POST',
-
 					body: JSON.stringify({ email, password }),
-					// body: {
-					// 	email: 'some3@mail.com',
-					// 	password: 'password',
-					// },
 				}
 			)
-			console.log(response)
-			if (response.token) {
-				const data = await response.json()
-				const token = data.token
 
-				localStorage.setItem('Token', token)
+			const { token } = await response.json()
+			if ({ token }) {
+				localStorage.setItem('Token', { token })
 				window.location.href = 'main'
 			} else {
 				const data = await response.json()
-				setErrorMessage(data.message || 'Неверная почта или пароль')
+				setErrorMessage('Неверная почта или пароль')
 			}
 		} catch (error) {
 			console.log('Ошибка при авторизации: ', error)
