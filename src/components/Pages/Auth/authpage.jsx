@@ -1,7 +1,9 @@
 import { useEffect, useState } from 'react'
 import styles from './styles.module.css'
+import { useNavigate } from 'react-router-dom'
 
 const Auth = () => {
+	// const navigate = useNavigate()
 	const [email, setEmail] = useState('')
 	const [password, setPassword] = useState('')
 	const [emailDirty, setEmailDirty] = useState(false)
@@ -45,6 +47,36 @@ const Auth = () => {
 		}
 	}
 
+	const handleSubmit = async e => {
+		e.preventDefault()
+		try {
+			const response = await fetch(
+				'https://alpaca-oriented-certainly.ngrok-free.app/login',
+				{
+					method: 'POST',
+					body: JSON.stringify({ email, password }),
+					// body: {
+					// 	email: 'some3@mail.com',
+					// 	password: 'password',
+					// },
+				}
+			)
+			console.log(response.token)
+			if (response.token) {
+				const data = await response.json()
+				const token = data.token
+
+				localStorage.setItem('jwtToken', token)
+				// navigate('/')
+			} else {
+				const data = await response.json()
+				setErrorMessage('Неверная почта или пароль')
+			}
+		} catch (error) {
+			console.log('Ошибка при авторизации: ', error)
+		}
+	}
+
 	return (
 		<main className={styles.main}>
 			<span className={styles.mask}></span>
@@ -78,6 +110,7 @@ const Auth = () => {
 						<div className={styles.footerOfWrapper}>
 							<a href='' className={styles.href}>
 								<input
+									onClick={handleSubmit}
 									disabled={!formValid}
 									type='submit'
 									value='Войти'
