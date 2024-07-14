@@ -11,6 +11,39 @@ function Table() {
 	})
 	const [clickChecker, setClickChecker] = useState(false)
 
+	const fetchDelTableData = async id => {
+		const response = await fetch('https://polyabitcontent.loca.it/direction', {
+			method: 'POST',
+			header: {
+				authorization: `Bearer ${sessionStorage.getItem('Token')}`,
+			},
+			body: JSON.stringify({ id }),
+		})
+		try {
+			const data = await response.json()
+			if (data) console.log('Строчка успешно удалена')
+			else console.log('Ошибка удаления строки')
+		} catch (error) {
+			console.log(error)
+		}
+	}
+	const fetchTableData = async () => {
+		const response = await fetch('https://polyabitcontent.loca.it/direction', {
+			method: 'GET',
+			header: {
+				authorization: `Bearer ${sessionStorage.getItem('Token')}`,
+			},
+		})
+		try {
+			const { data } = await response.json()
+			if (data) {
+				setTableData(data)
+			} else console.log('Ошибка загрузки данных')
+		} catch (error) {
+			console.log(error)
+		}
+	}
+	fetchTableData()
 	const addNewRow = () => {
 		setTableData([
 			...tableData,
@@ -26,15 +59,40 @@ function Table() {
 		setExams([])
 	}
 
+	const serverConnection = async () => {
+		const response = await fetch(
+			'https://alpaca-oriented-certainly.ngrok-free.app',
+			{
+				method: 'POST',
+				header: {
+					authorization: `Bearer ${sessionStorage.getItem('Token')}`,
+				},
+				body: JSON.stringify({
+					code: code,
+					name: nameDir,
+					exams: `${exams[0]},${exams[1]},${exams[2]}`,
+				}),
+			}
+		)
+		try {
+			if (response.ok) console.log('Данные успешно отправлены')
+			else console.log('Ошибка отправки данных')
+		} catch (error) {
+			console.log(error)
+		}
+	}
+
 	const handleSubmit = e => {
 		e.preventDefault()
 		addNewRow()
+		serverConnection()
 	}
 
 	const handleDel = id => {
 		if (window.confirm('Вы уверены, что хотите удалить эту строку?')) {
 			setTableData(tableData.filter(row => row.id !== id))
 		}
+		fetchDelTableData(id)
 	}
 
 	const handleClick = () => {

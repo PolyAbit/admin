@@ -52,6 +52,7 @@ const Auth = () => {
 		try {
 			const response = await fetch(
 				'https://alpaca-oriented-certainly.ngrok-free.app/login',
+
 				{
 					method: 'POST',
 					body: JSON.stringify({ email, password }),
@@ -60,7 +61,7 @@ const Auth = () => {
 
 			const { token } = await response.json()
 			if (token) {
-				localStorage.setItem('Token', { token })
+				sessionStorage.setItem('Token', token)
 				window.location.href = 'main'
 			} else {
 				const data = await response.json()

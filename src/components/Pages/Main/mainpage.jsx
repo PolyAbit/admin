@@ -4,6 +4,7 @@ import styles from './styles.module.css'
 const Main = () => {
 	const handleClick = () => {
 		window.location.href = '/'
+		sessionStorage.removeItem('Token')
 	}
 
 	return (

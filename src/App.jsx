@@ -1,7 +1,7 @@
 import Auth from './components/Pages/Auth/authpage'
 import Main from './components/Pages/Main/mainpage'
 import { Routes, Route, useNavigate } from 'react-router-dom'
-import PrivateRoute from './router/privateRoute'
+import PrivateRoute from './router/privateRoute.jsx'
 
 function App() {
 	return (
