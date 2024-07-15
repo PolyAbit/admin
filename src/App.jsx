@@ -8,7 +8,6 @@ import 'bootstrap/dist/css/bootstrap.min.css'
 import AuthNew from './components/BootStrapPages/AuthNew/authpageNew.jsx'
 import DirectionsNew from './components/BootStrapPages/DirectionsNew/directionspageNew.jsx'
 import NaviBar from './components/helpers/navibar.jsx'
-import Home from './components/BootStrapPages/HomeNew/homepage.jsx'
 
 function App() {
 	return (
