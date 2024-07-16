@@ -12,7 +12,7 @@ import {
   FormControl,
   FormSelect,
 } from "react-bootstrap";
-import { Api } from "../../../constants/api";
+import { Api } from "../../constants/api";
 
 const DirectionsNew = () => {
   const [code, setCode] = useState("");

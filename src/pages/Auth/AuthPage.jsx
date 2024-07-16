@@ -11,8 +11,8 @@ import {
   FormControl,
   ModalFooter,
 } from "react-bootstrap";
-import { handleLogin } from "../function";
-import { Api } from "../../../constants/api";
+import { handleLogin } from "../../utils/routing";
+import { Api } from "../../constants/api";
 
 const AuthNew = () => {
   const [email, setEmail] = useState("");

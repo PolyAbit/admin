@@ -7,9 +7,9 @@ import {
   NavbarCollapse,
   Nav,
 } from "react-bootstrap";
-import { handleLogout } from "../BootStrapPages/function";
+import { handleLogout } from "../utils/routing";
 
-const NaviBar = () => {
+const NavBar = () => {
   return (
     <Navbar
       collapseOnSelect
@@ -52,4 +52,4 @@ const NaviBar = () => {
   );
 };
 
-export default NaviBar;
+export default NavBar;
