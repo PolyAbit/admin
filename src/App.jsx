@@ -1,5 +1,4 @@
-import { Routes, Route } from "react-router-dom";
-import PrivateRoute from "./router/privateRoute.jsx";
+import { Routes, Route, Outlet } from "react-router-dom";
 import "react-bootstrap";
 import "bootstrap/dist/css/bootstrap.min.css";
 
@@ -12,7 +11,7 @@ function App() {
     <>
       <NavBar />
       <Routes>
-        <Route element={<PrivateRoute />}>
+        <Route element={<Outlet />}>
           <Route path="directions" element={<DirectionsNew />} />
         </Route>
         <Route path="/" element={<AuthNew />} />
