@@ -1,6 +1,4 @@
-import Auth from './components/Pages/Auth/authpage'
-import Main from './components/Pages/Main/Main/mainpage.jsx'
-import { Routes, Route, useNavigate } from 'react-router-dom'
+import { Routes, Route } from 'react-router-dom'
 import PrivateRoute from './router/privateRoute.jsx'
 import 'react-bootstrap'
 import 'bootstrap/dist/css/bootstrap.min.css'
